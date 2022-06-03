@@ -104,42 +104,42 @@ namespace AlfaTask1
 
             try
             {
-                string fNameIndexS = range.Find("First Name", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int fNameIndex = Convert.ToInt32(fNameIndexS.Split('$')[2]);
-                string sNameIndexS = range.Find("Last Name", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int sNameIndex = Convert.ToInt32(sNameIndexS.Split('$')[2]);
-                string companyIndexS = range.Find("Company Name", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int companyIndex = Convert.ToInt32(companyIndexS.Split('$')[2]);
-                string roleIndexS = range.Find("Role in Company", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int roleIndex = Convert.ToInt32(roleIndexS.Split('$')[2]);
-                string emailIndexS = range.Find("Email", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int emailIndex = Convert.ToInt32(emailIndexS.Split('$')[2]);
-                string phoneIndexS = range.Find("Phone", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int phoneIndex = Convert.ToInt32(phoneIndexS.Split('$')[2]);
-                string addressIndexS = range.Find("Address", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
-                int addressIndex = Convert.ToInt32(addressIndexS.Split('$')[2]);
+                string fNameIndex = range.Find("First Name", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                fNameIndex = fNameIndex.Split('$')[1];
+                string sNameIndex = range.Find("Last Name", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                sNameIndex = sNameIndex.Split('$')[1];
+                string companyIndex = range.Find("Company Name", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                companyIndex = companyIndex.Split('$')[1];
+                string roleIndex = range.Find("Role in Company", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                roleIndex = roleIndex.Split('$')[1];
+                string emailIndex = range.Find("Email", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                emailIndex = emailIndex.Split('$')[1];
+                string phoneIndex = range.Find("Phone", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                phoneIndex = phoneIndex.Split('$')[1];
+                string addressIndex = range.Find("Address", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
+                addressIndex = addressIndex.Split('$')[1];
 
                 range = worksheet.Columns[1];
                 string lastIndexS = range.Find("", Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart).Address;
                 int lastIndex = Convert.ToInt32(lastIndexS.Split('$')[2]);
 
             
-                for (int i = 2; i < lastIndex; i++)
+                for (int i = 2; i < 3; i++)
                 {
-                    Excel.Range cell = worksheet.Cells[i, fNameIndex];
-                    string fNameValue = cell.Value;
-                    cell = worksheet.Cells[i, sNameIndex];
-                    string sNameValue = cell.Value;
-                    cell = worksheet.Cells[i, companyIndex];
-                    string company = cell.Value;
-                    cell = worksheet.Cells[i, roleIndex];
-                    string role = cell.Value;
-                    cell = worksheet.Cells[i, emailIndex];
-                    string email = cell.Value;
-                    cell = worksheet.Cells[i, phoneIndex];
-                    string phone = cell.Value;
-                    cell = worksheet.Cells[i, addressIndex];
-                    string address = cell.Value;
+                    Excel.Range cell = worksheet.Range[fNameIndex+ i.ToString()];
+                    string fNameValue = Convert.ToString(cell.Value);
+                    cell = worksheet.Range[sNameIndex + i.ToString()];
+                    string sNameValue = Convert.ToString(cell.Value);
+                    cell = worksheet.Range[companyIndex + i.ToString()];
+                    string company = Convert.ToString(cell.Value);
+                    cell = worksheet.Range[roleIndex + i.ToString()];
+                    string role = Convert.ToString(cell.Value);
+                    cell = worksheet.Range[emailIndex + i.ToString()];
+                    string email = Convert.ToString(cell.Value);
+                    cell = worksheet.Range[phoneIndex + i.ToString()];
+                    string phone = Convert.ToString(cell.Value);
+                    cell = worksheet.Range[addressIndex + i.ToString()];
+                    string address = Convert.ToString(cell.Value);
 
                     FillFields(
                         email,
@@ -149,7 +149,7 @@ namespace AlfaTask1
                         address,
                         company,
                         role);
-                    Submit();
+                    //Submit();
                 }
             }
             catch
