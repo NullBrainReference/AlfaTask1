@@ -124,7 +124,7 @@ namespace AlfaTask1
                 int lastIndex = Convert.ToInt32(lastIndexS.Split('$')[2]);
 
             
-                for (int i = 2; i < 3; i++)
+                for (int i = 2; i < lastIndex; i++)
                 {
                     Excel.Range cell = worksheet.Range[fNameIndex+ i.ToString()];
                     string fNameValue = Convert.ToString(cell.Value);
@@ -149,7 +149,7 @@ namespace AlfaTask1
                         address,
                         company,
                         role);
-                    //Submit();
+                    Submit();
                 }
             }
             catch
