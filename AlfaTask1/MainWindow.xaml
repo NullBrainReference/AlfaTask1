@@ -1,0 +1,39 @@
+﻿<Window x:Class="AlfaTask1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlfaTask1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="314" Width="220">
+    <Grid RenderTransformOrigin="0.801,0.489" Height="462" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,5,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="278"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="writeButton" Content="Write" Margin="10,228,1,10" FontSize="24" Click="writeButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label x:Name="firstNameLable" Content="First Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" Width="66" Grid.Column="1"/>
+        <Label x:Name="lastNameLable" Content="Last Name" Margin="10,37,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" HorizontalAlignment="Left" Width="66" Grid.Column="1"/>
+        <Label x:Name="emailLable" Content="Email" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" Width="38" Grid.Column="1"/>
+        <Label x:Name="phoneLable" Content="Phone" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" Width="44" Grid.Column="1"/>
+        <Label x:Name="companyLable" Content="Company" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.656" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" Width="60" Grid.Column="1"/>
+        <Label x:Name="roleLable" Content="Role" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" Width="32" Grid.ColumnSpan="2" RenderTransformOrigin="-0.083,0.591"/>
+        <Label x:Name="addressLable" Content="Address" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="26" Width="53" Grid.Column="1"/>
+        <TextBox x:Name="firstNameTextBox" Margin="1,14,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <TextBox x:Name="lastNameTextBox" Margin="1,41,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <TextBox x:Name="emailTextBox" Margin="1,66,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <TextBox x:Name="phoneTextBox" Margin="1,92,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <TextBox x:Name="addressTextBox" Margin="1,118,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <TextBox x:Name="companyTextBox" Margin="1,144,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <TextBox x:Name="roleTextBox" Margin="1,170,1,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="18" Grid.Column="2"/>
+        <CheckBox x:Name="writeAllFromExcelCheckBox" Content="Write all from Excel" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Checked="writeAllFromExcelCheckBox_Checked" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Height="16" Width="194" Unchecked="writeAllFromExcelCheckBox_Unchecked" Grid.ColumnSpan="2" Grid.Column="1"/>
+
+    </Grid>
+</Window>
