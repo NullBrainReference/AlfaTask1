@@ -84,7 +84,7 @@ namespace AlfaTask1
         //}
         private void WriteFromExcel()
         {
-            Excel.Application excelFile = new Excel.Application().get_Application();
+            Excel.Application excelFile = new Excel.Application().Application;
 
             string path = "";
             var dialog = new Microsoft.Win32.OpenFileDialog();
@@ -97,7 +97,7 @@ namespace AlfaTask1
                 path = dialog.FileName;
             }
 
-            Excel.Workbook workbook = excelFile.get_Workbooks().Open(path);
+            Excel.Workbook workbook = excelFile.Workbooks.Open(path);
             Excel.Worksheet worksheet = workbook.Worksheets[1];
 
             Excel.Range range = worksheet.Rows[1];
